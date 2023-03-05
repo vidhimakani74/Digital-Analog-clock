@@ -1,23 +1,33 @@
+const hours_needle = document.querySelector('.hours-needle');
+const minutes_needle = document.querySelector('.minutes-needle');
+const seconds_needle = document.querySelector('.seconds-needle');
+const ampmc = document.getElementById("ampm");
 
-function runTheClock(){
-    date = new Date();
-     
-    hr=date.getHours();
-    min = date.getMinutes();
-    sec = date.getSeconds();
+const digital = document.querySelector('.digital');
 
-    hrPosition = (hr * 360 / 12) + (min * (360 / 60) / 12);
-    minPosition = (min * 360 / 60) + (sec * (360 / 60) / 60);
-    secPosition = sec * 360 / 60;
+setInterval(() => {
+    const time = new Date();
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
+    let ampm="AM";
 
-    hour.style.transform = `rotate(${hrPosition}deg)`;
-    minute.style.transform = `rotate(${minPosition}deg)`;
-    second.style.transform = `rotate(${secPosition}deg)`;
-}
+    hours_needle.style.transform = `translate(-50%, -100%) rotate(${(360 * hours) / 12}deg)`
+    minutes_needle.style.transform = `translate(-50%, -100%) rotate(${(360 * minutes) / 60}deg)`
+    seconds_needle.style.transform = `translate(-50%, -100%) rotate(${(360 * seconds) / 60}deg)`
 
-interval = setInterval(runTheClock, 1000);
+    if (hours > 12) {
+        hours = hours - 12;
+        ampm = "PM";
 
+    }
 
-
-
-
+    if (hours < 10) hours = `0${hours}`;
+    if (minutes < 10) minutes = `0${minutes}`;
+    if (seconds < 10) seconds = `0${seconds}`;
+    
+    digital.innerHTML = `<span class="hours">${hours}</span> :
+                        <span class="minutes">${minutes}</span> :
+                        <span class="seconds">${seconds}</span>
+                        <span class="ampm">${ampm}</span>`
+}, 1000)

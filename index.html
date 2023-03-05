@@ -8,32 +8,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Digital Clock -->
-    <!-- <h2>Digital Clock</h2>
-    <div class="clock">
-        <div>
-            <span id="ahour">00</span>
-            <span class="text">Hours</span>
-        </div>
-        <div>
-            <span id="aminutes">00</span>
-            <span class="text">Minutes</span>
-        </div>
-        <div>
-            <span id="aseconds">00</span>
-            <span class="text">Seconds</span>
-        </div>
-        <div>
-            <span id="ampm">AM</span>
-        </div>
-    </div> -->
+    <div class="container">
+        <h1>Digital Analog Clock</h1>
+        <div class="clock">
+            <div class="analog">
+                <div class="hours-needle"></div>
+                <div class="minutes-needle"></div>
+                <div class="seconds-needle"></div>
+                <div class="dot"></div>
 
-    <!-- Analog clock -->
-    <h2>Analog lock</h2>
-    <div id="clock-container">
-        <div id="hour"></div>
-        <div id="minute"></div>
-        <div id="second"></div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(30deg)">1</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(60deg)">2</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(90deg)">3</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(120deg)">4</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(150deg)">5</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(180deg)">6</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(210deg)">7</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(240deg)">8</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(270deg)">9</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(300deg)">10</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(330deg)">11</div>
+                <div class="num" style="--rotation: translate(-50%, -50%) rotate(360deg)">12</div>
+            </div>
+            <div class="digital">
+                <span class="hours">12</span> :
+                <span class="minutes">12</span> :
+                <span class="seconds">12</span>
+                <span id="ampm">AM</span>
+                <!-- <p>hours</p>
+                <p>minutes</p>
+                <p>seconds</p> -->
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
